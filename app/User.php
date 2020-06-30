@@ -36,4 +36,55 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Friends that User has initiated
+     */
+    public function friendsOfMine()
+    {
+        return $this->belongsToMany('User', 'friends', 'user_id', 'friend_id')
+            ->wherePivot('accepted_at', '!=', null)
+            ->withPivot('accepted_at');
+    }
+
+    /**
+     * Friendships that user was invited to
+     */
+    public function friendOf()
+    {
+        return $this->belongsToMany('User', 'friends', 'friend_id', 'user_id')
+            ->wherePivot('accepted_at', '!=', null)
+            ->withPivot('accepted_at');
+    }
+
+    /**
+     * Accessor to allow calling $user->friends
+     */
+    public function getFriendsAttribute()
+    {
+        if(!array_key_exists('friends', $this->relations)) $this->loadFriends();
+
+        return $this->getRelation('friends');
+    }
+    
+    /**
+     * Utilized by the accessor to load friends
+     */
+    protected function loadFriends()
+    {
+        if(!array_key_exists('friends', $this->relations))
+        {
+            $friends = $this->mergeFriends();
+
+            $this->setRelation('friends', $friends);
+        }
+    }
+
+    /**
+     * Utilized by loadFriends to to merge content
+     */
+    protected function mergeFriends()
+    {
+        return $this->friendsOfMine->merge($this->friendOf);
+    }
 }
