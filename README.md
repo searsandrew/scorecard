@@ -5,14 +5,14 @@ Scorecard is a modernized version of an Agricola online score card built by Mayf
 searsandrew/scorecard.git
 
 ## Development Plans
-[X] Basic adding of friends
-[ ] Creating a game
-[ ] Inviting friends to join a game
-[ ] Users should be able to create new boardgame score cards (with permission)
-[ ] Auto give permission to create score cards with enough rep (talk about this)
-[X] Boardgames should include the [Board Game Geek](https://www.boardgamegeek.com/) game ID
-[X] Eventually it would be nice to pull game data from their XML API
-[ ] Designs for the front end
+- [X] Basic adding of friends
+- [ ] Creating a game
+- [ ] Inviting friends to join a game
+- [ ] Users should be able to create new boardgame score cards (with permission)
+- [ ] Auto give permission to create score cards with enough rep (talk about this)
+- [X] Boardgames should include the [Board Game Geek](https://www.boardgamegeek.com/) game ID
+- [X] Eventually it would be nice to pull game data from their XML API
+- [ ] Designs for the front end
 
 ## Packages
 - laravel/framework: 7.0
