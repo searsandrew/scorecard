@@ -81,9 +81,9 @@
             @yield('content')
             <div class="container">
                 <div class="row justify-content-center mt-4">
-                    <div class="col-md-8 text-center">
+                    <div class="col-md-10 text-center">
                         <hr />
-                        <small class="text-dark">Copyright &copy;2020 <a href="http://www.mayfifteenth.com/">Mayfifteenth</a>. Terms and Conditions. <a href="{{ route('page.show', 'changelog') }}">Matterhorn v.{{ config('matterhorn.version') }}</a></small>
+                        <small class="text-dark">Designed by <a href="http://www.mayfifteenth.com/">Mayfifteenth</a> • <a href="https://unlicense.org">The Unlicense</a> • <a href="{{ route('page.show', 'changelog') }}">Matterhorn v.{{ config('matterhorn.version') }}</a></small>
                     </div>
                 </div>
             </div>
