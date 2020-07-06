@@ -9,10 +9,10 @@ The plan for v1 is to allow for basic adding of friends, creating a game, and in
 
 ## Packages
 - laravel/framework: 7.0
+- laravel/ui: 2.0
 - spatie/laravel-permission: 3.11
 
 ### Planned Packages
-- laravel/ui: 2.0
 - laravel/sanctum: 2.4 - If moving to SPA frontend.
 - league/flysystem-aws-s3-v3: 1.0
 - spatie/laravel-tags: 2.6
