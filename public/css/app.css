@@ -10928,3 +10928,7 @@ a.text-dark:focus {
   }
 }
 
+label {
+  margin-bottom: 0.25rem;
+}
+

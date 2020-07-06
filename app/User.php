@@ -88,4 +88,14 @@ class User extends Authenticatable
     {
         return $this->friendsOfMine->merge($this->friendOf);
     }
+
+    /**
+     * A user may create many boardgames
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function boardgames() : \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Boardgame');
+    }
 }

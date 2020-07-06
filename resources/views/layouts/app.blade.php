@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -19,7 +22,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background: url({{ config('matterhorn.background') }});">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -33,7 +36,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('boardgame.index') }}">Boardgames</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -74,6 +79,14 @@
 
         <main class="py-4">
             @yield('content')
+            <div class="container">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-8 text-center">
+                        <hr />
+                        <small class="text-dark">Copyright &copy;2020 <a href="http://www.mayfifteenth.com/">Mayfifteenth</a>. Terms and Conditions. <a href="{{ route('page.show', 'changelog') }}">Matterhorn v.{{ config('matterhorn.version') }}</a></small>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
